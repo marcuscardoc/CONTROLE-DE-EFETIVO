@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="telaInicialPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.telaprincipalcontroller">
+   <children>
+      <MenuBar fx:id="menuBarTelaPrincipal" layoutY="-4.0" prefHeight="31.0" prefWidth="1100.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+        <menus>
+          <Menu fx:id="menuFile" mnemonicParsing="false" text="File">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Close" />
+            </items>
+          </Menu>
+          <Menu fx:id="menuEdit" mnemonicParsing="false" text="Edit">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Delete" />
+            </items>
+          </Menu>
+          <Menu fx:id="menuHelp" mnemonicParsing="false" text="Help">
+            <items>
+              <MenuItem mnemonicParsing="false" text="About" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+      <Button fx:id="efetivobtn" layoutX="14.0" layoutY="424.0" mnemonicParsing="false" onAction="#acaoBtn" prefHeight="43.0" prefWidth="173.0" text="EFETIVO" />
+      <Button fx:id="controlemensalbtn" layoutX="14.0" layoutY="490.0" mnemonicParsing="false" onAction="#acaoBtn" prefHeight="43.0" prefWidth="173.0" text="CONTROLE MENSAL" />
+      <Button fx:id="inspeçaobtn" layoutX="14.0" layoutY="554.0" mnemonicParsing="false" onAction="#acaoBtn" prefHeight="43.0" prefWidth="173.0" text="INSPEÇAO DE SAUDE" />
+      <Label layoutX="14.0" layoutY="136.0" prefHeight="60.0" prefWidth="173.0" text="CONTROLE ESI GSD">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <AnchorPane fx:id="efetivoview" layoutX="211.0" layoutY="28.0" prefHeight="723.0" prefWidth="889.0" visible="false" AnchorPane.leftAnchor="211.0" AnchorPane.rightAnchor="0.0">
+         <children>
+            <TableView fx:id="tableView" layoutX="14.0" layoutY="14.0" prefHeight="509.0" prefWidth="861.0">
+              <columns>
+                <TableColumn fx:id="nomeColumn" prefWidth="218.0" text="NOME" />
+                <TableColumn fx:id="saramColumn" minWidth="3.0" prefWidth="100.0" text="SARAM" />
+                  <TableColumn fx:id="turmaColumn" prefWidth="55.0" text="TURMA" />
+                  <TableColumn fx:id="postoDeSvColumn" prefWidth="132.0" text="CPF" />
+                  <TableColumn fx:id="saramColumn1" prefWidth="138.0" text="SENHA PORTAL" />
+                  <TableColumn fx:id="turmaColumn1" prefWidth="217.0" text="POSTO DE SERVIÇO" />
+              </columns>
+            </TableView>
+            <Button fx:id="btncriar" layoutX="131.0" layoutY="649.0" mnemonicParsing="false" onAction="#addsoldado" prefHeight="45.0" prefWidth="140.0" text="ADICIONAR" />
+            <Button fx:id="btnmodificar" layoutX="299.0" layoutY="649.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="140.0" text="MODIFICAR " />
+            <Button fx:id="btnexcluir" layoutX="462.0" layoutY="649.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="140.0" text="EXCLUIR" />
+            <Button fx:id="btnsalvar" layoutX="634.0" layoutY="649.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="140.0" text="SALVAR" />
+            <Label layoutX="14.0" layoutY="540.0" prefHeight="17.0" prefWidth="50.0" text="NOME:" />
+            <Label layoutX="14.0" layoutY="589.0" prefHeight="17.0" prefWidth="50.0" text="SARAM:" />
+            <Label layoutX="666.0" layoutY="540.0" prefHeight="17.0" prefWidth="50.0" text="TURMA:" />
+            <Label layoutX="602.0" layoutY="589.0" prefHeight="17.0" prefWidth="116.0" text="POSTO DE SERVIÇO:" />
+            <TextField fx:id="nomeTextField" layoutX="73.0" layoutY="536.0" />
+            <TextField fx:id="saramTextField" layoutX="73.0" layoutY="585.0" />
+            <TextField fx:id="postoDeSvTextField" layoutX="726.0" layoutY="585.0" />
+            <TextField fx:id="turmaTextField" layoutX="726.0" layoutY="536.0" />
+            <Label layoutX="319.0" layoutY="540.0" text="CPF:" />
+            <Label layoutX="255.0" layoutY="589.0" text="SENHA PORTAL:" />
+            <TextField fx:id="textFieldSenhaPortalTelaInicial" layoutX="356.0" layoutY="585.0" />
+            <TextField fx:id="textFieldCpfTelaEfetivo" layoutX="356.0" layoutY="536.0" />
+         </children>
+      </AnchorPane>
+      <Line endX="-100.0" endY="722.0" layoutX="309.0" layoutY="28.0" startX="-100.0" />
+      <AnchorPane fx:id="controlemensalpane" layoutX="211.0" layoutY="27.0" prefHeight="723.0" prefWidth="889.0">
+         <children>
+            <TableView fx:id="efetivoesi" layoutX="32.0" layoutY="53.0" prefHeight="656.0" prefWidth="837.0" AnchorPane.leftAnchor="26.0" AnchorPane.rightAnchor="26.0">
+              <columns>
+                <TableColumn fx:id="nomecmcolumn" prefWidth="226.0" text="NOME" />
+                <TableColumn fx:id="saramcmcolumn" prefWidth="88.0" text="SARAM" />
+                  <TableColumn fx:id="turmacmcolumn" prefWidth="85.0" text="TURMA" />
+                  <TableColumn fx:id="postoDeSvcmcolumn" prefWidth="148.0" text="POSTO DE SERVIÇO" />
+                  <TableColumn fx:id="obscmcolumn" prefWidth="289.0" text="OBSERVAÇAO" />
+              </columns>
+            </TableView>
+            <DatePicker fx:id="datapicker" layoutX="156.0" layoutY="14.0" onAction="#manipulandoDatePicker" prefHeight="31.0" prefWidth="107.0" AnchorPane.topAnchor="14.0" />
+            <Label layoutX="26.0" layoutY="15.0" prefHeight="30.0" prefWidth="166.0" text="Selecione a data:">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Label>
+            <TextField fx:id="pesquisar" layoutX="680.0" layoutY="26.0" prefHeight="31.0" prefWidth="140.0" promptText="PESQUISAR" AnchorPane.topAnchor="14.0" />
+            <Button fx:id="btnsalvar2" layoutX="405.0" layoutY="29.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="131.0" text="SALVAR" AnchorPane.topAnchor="14.0" />
+            <Button layoutX="820.0" layoutY="26.0" mnemonicParsing="false" onAction="#filtrarPorNome" prefHeight="31.0" prefWidth="43.0" text="  🔍 " AnchorPane.topAnchor="14.0">
+               <font>
+                  <Font size="11.0" />
+               </font>
+            </Button>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="inspeçaoDeSaudePane" layoutX="212.0" layoutY="28.0" prefHeight="723.0" prefWidth="889.0" visible="false">
+         <children>
+            <Label fx:id="helloword" layoutX="237.0" layoutY="299.0" prefHeight="60.0" prefWidth="173.0" text="HELLO WORD" />
+         </children>
+      </AnchorPane>
+      <Button fx:id="btnFerias" layoutX="14.0" layoutY="616.0" mnemonicParsing="false" onAction="#acaoBtn" prefHeight="43.0" prefWidth="173.0" text="FERIAS" />
+   </children>
+</AnchorPane>
